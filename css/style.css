@@ -99,3 +99,16 @@ header {
 .centro {
   text-align: center;
 }
+
+ nav {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  justify-content: flex-start;
+}
+
+
+nav a:hover {
+  color: var(--azul-destaque);
+  border-color: var(--azul-destaque);
+}
