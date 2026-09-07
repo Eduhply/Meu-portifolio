@@ -104,7 +104,7 @@ header {
   display: flex;
   gap: 1rem;
   padding: 1.5rem;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 
