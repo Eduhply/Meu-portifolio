@@ -1,125 +1,591 @@
 :root {
-  --bg-preto: #0a0a0a;
-  --texto-claro: #f2f2f2;
-  --azul-destaque: #3b6ef6;
+    --bg-preto: #0a0a0a;
+    --texto-claro: #f2f2f2;
+    --azul-destaque: #3b6ef6;
 }
+
+/* =========================
+   CONFIGURAÇÃO GERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
-  background-color: var(--bg-preto);
-  color: var(--texto-claro);
-  font-family: sans-serif;
-  margin: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
 }
+
+body {
+    background-color: var(--bg-preto);
+    color: var(--texto-claro);
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
 nav {
-  display: flex;
-  gap: 1rem;
-  padding: 1.5rem;
+    position: fixed;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    padding: 0;
+
+    z-index: 100;
 }
 
 nav a {
-  color: var(--texto-claro);
-  text-decoration: none;
-  padding: 0.5rem 1.2rem;
-  border: 1px solid #333;
-  border-radius: 999px;
-}
-h1 {
-  color: var(--azul-destaque);
-  font-size: 4rem;
-  line-height: 1;
-  margin: 0.5rem 0;
-}
-main {
-  padding: 2rem;
-}
+    color: var(--texto-claro);
+    text-decoration: none;
 
-p {
-  font-size: 1.1rem;
-  color: #b0b0b0;
-  max-width: 500px;
-}
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
 
-header {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-}
+    padding: 0.2rem 0;
 
-main a {
-  color: var(--azul-destaque);
-}
+    border: none;
+    border-radius: 0;
 
-ul {
-  list-style: none;
-  padding: 0;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
-
-li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #333;
-}
-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.ola {
-  font-size: 1rem;
-  color: #888;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.subtitulo {
-  color: #b0b0b0;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-.centro {
-  text-align: center;
-}
-
-.skills-grid > div {
-  flex: 1;
-}
-.titulo-grande .texto-branco {
-  display: block;
-  color: var(--texto-claro);
-}
-
-.titulo-grande .destaque {
-  display: block;
-  color: var(--azul-destaque);
-  font-size: 1.3em;
-}
-.centro {
-  text-align: center;
-}
-
- nav {
-  display: flex;
-  gap: 1rem;
-  padding: 1.5rem;
-  justify-content: flex-end;
-}
-
 
 nav a:hover {
-  color: var(--azul-destaque);
-  border-color: var(--azul-destaque);
-}
-.sobre-pequeno {
-  display: block;
-  font-size: 0.4em;
-  color: var(--texto-claro);
-  font-weight: normal;
+    color: var(--azul-destaque);
+    border: none;
+    transform: translateX(5px);
 }
 
 nav a.ativo {
-  color: var(--azul-destaque);
-  border-color: var(--azul-destaque);
+    color: var(--azul-destaque);
+    border: none;
+}
+
+
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5rem 8rem 5rem 14rem;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo-grande {
+    margin: 0;
+
+    max-width: 1100px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(5rem, 8vw, 9rem);
+
+    font-weight: 700;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.04em;
+}
+
+.titulo-grande .texto-branco {
+    display: block;
+    color: var(--texto-claro);
+}
+
+.titulo-grande .destaque {
+    display: inline;
+    color: var(--azul-destaque);
+    font-size: inherit;
+}
+
+
+/* =========================
+   LINKS DE CONTATO
+========================= */
+
+.contatos-links {
+    display: flex;
+    align-items: center;
+
+    gap: 3rem;
+
+    margin-top: 3rem;
+}
+
+.contatos-links a {
+    color: var(--texto-claro);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.contatos-links a:hover {
+    color: var(--azul-destaque);
+}
+
+
+/* =========================
+   TEXTOS GERAIS
+========================= */
+
+p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    max-width: 500px;
+}
+
+h1 {
+    color: var(--azul-destaque);
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0.5rem 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================
+   OUTROS ELEMENTOS
+========================= */
+
+.ola {
+    font-size: 1rem;
+    color: #888;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.subtitulo {
+    color: #b0b0b0;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.centro {
+    text-align: center;
+}
+
+.sobre-pequeno {
+    display: block;
+    font-size: 0.4em;
+    color: var(--texto-claro);
+    font-weight: normal;
+}
+
+.skills-grid > div {
+    flex: 1;
+}
+
+.skills-grid h2 {
+    color: var(--azul-destaque);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        left: 25px;
+    }
+
+    main {
+        padding: 5rem 4rem 5rem 10rem;
+    }
+
+    .titulo-grande {
+        font-size: clamp(4rem, 9vw, 7rem);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    nav {
+        position: absolute;
+
+        top: 25px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        flex-direction: row;
+        gap: 1rem;
+
+        width: max-content;
+    }
+
+    nav a:hover {
+        transform: none;
+    }
+
+    main {
+        padding: 10rem 2rem 4rem;
+        min-height: 100vh;
+    }
+
+    .titulo-grande {
+        font-size: clamp(3.5rem, 14vw, 5rem);
+        line-height: 0.95;
+    }
+
+    .contatos-links {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 1rem;
+
+        margin-top: 2rem;
+    }
+}:root {
+    --bg-preto: #0a0a0a;
+    --texto-claro: #f2f2f2;
+    --azul-destaque: #3b6ef6;
+}
+
+/* =========================
+   CONFIGURAÇÃO GERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background-color: var(--bg-preto);
+    color: var(--texto-claro);
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+nav {
+    position: fixed;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+    padding: 0;
+
+    z-index: 100;
+}
+
+nav a {
+    color: var(--texto-claro);
+    text-decoration: none;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    padding: 0.2rem 0;
+
+    border: none;
+    border-radius: 0;
+
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+nav a:hover {
+    color: var(--azul-destaque);
+    border: none;
+    transform: translateX(5px);
+}
+
+nav a.ativo {
+    color: var(--azul-destaque);
+    border: none;
+}
+
+
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5rem 8rem 5rem 14rem;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo-grande {
+    margin: 0;
+
+    max-width: 1100px;
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: clamp(5rem, 8vw, 9rem);
+
+    font-weight: 700;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.04em;
+}
+
+.titulo-grande .texto-branco {
+    display: block;
+    color: var(--texto-claro);
+}
+
+.titulo-grande .destaque {
+    display: inline;
+    color: var(--azul-destaque);
+    font-size: inherit;
+}
+
+
+/* =========================
+   LINKS DE CONTATO
+========================= */
+
+.contatos-links {
+    display: flex;
+    align-items: center;
+
+    gap: 3rem;
+
+    margin-top: 3rem;
+}
+
+.contatos-links a {
+    color: var(--texto-claro);
+
+    font-family: "Playfair Display", Georgia, serif;
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+.contatos-links a:hover {
+    color: var(--azul-destaque);
+}
+
+
+/* =========================
+   TEXTOS GERAIS
+========================= */
+
+p {
+    font-size: 1.1rem;
+    color: #b0b0b0;
+    max-width: 500px;
+}
+
+h1 {
+    color: var(--azul-destaque);
+    font-size: 4rem;
+    line-height: 1;
+    margin: 0.5rem 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================
+   OUTROS ELEMENTOS
+========================= */
+
+.ola {
+    font-size: 1rem;
+    color: #888;
+
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.subtitulo {
+    color: #b0b0b0;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.centro {
+    text-align: center;
+}
+
+.sobre-pequeno {
+    display: block;
+    font-size: 0.4em;
+    color: var(--texto-claro);
+    font-weight: normal;
+}
+
+.skills-grid > div {
+    flex: 1;
+}
+
+.skills-grid h2 {
+    color: var(--azul-destaque);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        left: 25px;
+    }
+
+    main {
+        padding: 5rem 4rem 5rem 10rem;
+    }
+
+    .titulo-grande {
+        font-size: clamp(4rem, 9vw, 7rem);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    nav {
+        position: absolute;
+
+        top: 25px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        flex-direction: row;
+        gap: 1rem;
+
+        width: max-content;
+    }
+
+    nav a:hover {
+        transform: none;
+    }
+
+    main {
+        padding: 10rem 2rem 4rem;
+        min-height: 100vh;
+    }
+
+    .titulo-grande {
+        font-size: clamp(3.5rem, 14vw, 5rem);
+        line-height: 0.95;
+    }
+
+    .contatos-links {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 1rem;
+
+        margin-top: 2rem;
+    }
 }
